@@ -3,10 +3,10 @@ import { ImPhone } from 'react-icons/im';
 import { useDispatch } from 'react-redux';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { RiEdit2Fill } from 'react-icons/ri';
-import { FaRegCircleUser } from 'react-icons/fa6';
 import { deleteContact } from '../../redux/contactsOps';
 import { useState } from 'react';
 import EditContactForm from '../EditContact/EditContact';
+import { FaRegUser } from 'react-icons/fa6';
 
 const Contact = ({ contact }) => {
   const [isEdit, setIsEdit] = useState(false);
@@ -24,7 +24,7 @@ const Contact = ({ contact }) => {
         <div className={style.user}>
           <h2 className={style.nameUser}>
             <span className={style.spanIconUser}>
-              <FaRegCircleUser className={style.iconUser} size={30} />
+              <FaRegUser className={style.iconUser} size={20} />
             </span>
             <span className={style.text}>{contact.name}</span>
           </h2>
@@ -37,7 +37,7 @@ const Contact = ({ contact }) => {
         </div>
         <div className={style.boxBtn}>
           <button className={style.btn} onClick={onEdit}>
-            <RiEdit2Fill size={18} />
+            <RiEdit2Fill className={style.iconDelete} size={18} />
           </button>
           <button className={style.btn} onClick={onDelete}>
             <RiDeleteBin6Fill className={style.iconDelete} size={18} />

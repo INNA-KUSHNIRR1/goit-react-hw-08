@@ -1,17 +1,18 @@
 .card {
+  background: rgba(26, 31, 30, 0.2)
+    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgba(106, 240, 233, 0.4));
   font-size: 18px;
   display: flex;
   gap: 16px;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border: 1px solid rgba(140, 196, 186, 0.87);
   border-radius: 16px;
   padding: 12px;
   transition: all 250ms ease-in-out;
 }
 .card:hover {
-  box-shadow: 0px 0px 4px rgba(140, 196, 186, 0.87);
+  box-shadow: -1px 0px 4px rgba(22, 22, 22, 0.87);
 }
 .user {
   max-width: 210px;
@@ -47,15 +48,20 @@
   font-size: 16px;
   transition: all 250ms ease-in-out;
 }
-.btn:hover,
+
 .btn:focus {
-  box-shadow: 2px 2px 4px rgba(140, 196, 186, 0.87);
-  border: 1px solid rgba(140, 196, 186, 0.87);
+  border: 1px solid rgb(172, 177, 177);
+}
+.btn .iconDelete {
+  transition: all 250ms ease-in-out;
+}
+.btn:hover .iconDelete {
+  transform: scale(1.1);
 }
 
 .iconPhone {
   transition: transform 250ms ease-in-out;
-  fill: rgb(243, 245, 244);
+  fill: rgb(172, 177, 177);
 }
 .iconPhone:hover {
   transform: scale(1.1);
@@ -70,24 +76,24 @@
 .spanIcon {
   width: 30px;
   height: 30px;
-  border: 1px solid rgb(69, 131, 110);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   transition: all 250ms ease-in-out;
-  background-color: rgb(43 162 122);
+  background: rgba(26, 31, 30, 0.2)
+    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgb(14, 99, 70));
 }
 .linkPhone .spanIcon {
   transition: all 250ms ease-in-out;
 }
 .linkPhone:hover .spanIcon {
-  background-color: rgb(15, 61, 46);
-  border: 1px solid rgb(29, 37, 35);
+  background: rgba(26, 31, 30, 0.2)
+    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgb(14, 141, 99));
 }
 .linkPhone:focus .spanIcon {
-  background-color: rgb(15, 61, 46);
-  border: 1px solid rgb(29, 37, 35);
+  background: rgba(26, 31, 30, 0.2)
+    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgb(14, 141, 99));
 }
 .spanIconUser {
   width: 30px;
@@ -99,5 +105,5 @@
   transition: all 250ms ease-in-out;
 }
 .text {
-  color: rgba(185, 236, 227, 0.87);
+  color: rgb(172, 177, 177);
 }

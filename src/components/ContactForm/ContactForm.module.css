@@ -3,42 +3,43 @@
 }
 
 .form {
+  background: rgba(26, 31, 30, 0.2)
+    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgba(106, 240, 233, 0.4));
   position: relative;
   margin: 20px auto;
-
   max-width: 380px;
   padding: 12px;
-  border: 1px solid rgb(201, 98, 98);
-  border-radius: 8px;
+  border-radius: 16px;
   text-align: left;
+  box-shadow: -1px 0px 4px rgba(22, 22, 22, 0.87);
 }
 .label {
   margin-left: 16px;
-  color: rgb(201, 98, 98);
+  color: rgb(172, 177, 177);
 }
 
-.field:focus {
-  border: 1px solid rgb(201, 98, 98);
-}
 .btn {
+  background: rgba(26, 31, 30, 0.2)
+    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgba(106, 240, 233, 0.4));
+  box-shadow: -1px 0px 4px rgba(22, 22, 22, 0.87);
   display: flex;
-  box-shadow: 0px 2px 2px rgb(201, 98, 98);
-  color: rgb(201, 98, 98);
+  justify-content: center;
+  align-content: center;
+  color: rgb(172, 177, 177);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 12px;
-  text-align: center;
-  border: 2px solid #1b1a1a;
+  border: none;
   margin-top: 20px;
   padding: 10px;
-  transition: all ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 .btn:hover {
-  border: 2px solid rgb(201, 98, 98);
+  transform: scale(1.02);
 }
 
 .btn:focus {
-  border: 1px solid rgb(201, 98, 98);
+  border: 1px solid rgb(172, 177, 177);
 }
 
 .error {
@@ -46,31 +47,8 @@
   font-size: 14px;
   text-align: right;
 }
+
 .field {
-  background-color: #181818 !important;
-  color: grey !important;
-}
-.field:-webkit-autofill {
-  background-color: #181818 !important;
-  color: grey !important;
-}
-
-.field:-webkit-autofill:focus {
-  background-color: #181818 !important;
-  color: grey !important;
-}
-
-.field:-webkit-autofill:hover {
-  background-color: #181818 !important;
-  color: grey !important;
-}
-
-.field:-webkit-autofill:active {
-  background-color: #181818 !important;
-  color: grey !important;
-}
-
-input {
   background-color: #181818;
   color-scheme: light dark;
   border: none;
@@ -85,9 +63,10 @@ input {
   border: 1px solid transparent;
   transition: border 250ms ease-in-out;
 }
-input:hover,
-input:focus {
-  border: 1px solid rgb(201, 98, 98);
+.field:hover,
+.field:focus {
+  background-color: #222121;
+  box-shadow: inset 2px 2px 4px rgb(10, 10, 10);
 }
 .btnUp {
   position: absolute;
@@ -106,5 +85,5 @@ input:focus {
   transform: scale(1.1);
 }
 .iconUp {
-  fill: grey;
+  fill: rgb(172, 177, 177);
 }

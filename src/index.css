@@ -56,7 +56,7 @@ p {
 }
 * {
   box-sizing: border-box;
-  color: rgba(185, 236, 227, 0.87);
+  color: rgb(172, 177, 177);
 }
 span {
   margin: 0;

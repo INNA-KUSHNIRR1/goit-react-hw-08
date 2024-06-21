@@ -100,6 +100,7 @@ const ContactForm = ({ setIsFormVisible }) => {
             </label>
 
             <Field
+              className={style.field}
               type="tel"
               name="number"
               id={numberFieldId}

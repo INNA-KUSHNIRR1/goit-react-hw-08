@@ -1,10 +1,11 @@
 .icon {
-  fill: rgb(201, 98, 98);
+  fill: rgba(106, 240, 233, 0.5);
 }
 
 .title {
   margin-top: 10px;
-  color: rgb(201, 98, 98);
+  margin-bottom: 40px;
+  color: rgba(106, 240, 233, 0.4);
 }
 
 .divWrapper {
@@ -12,6 +13,6 @@
   overflow: hidden;
 }
 .header {
-  box-shadow: 2px 4px 35px rgb(201, 98, 98);
-  margin-bottom: 70px;
+  /* box-shadow: 2px 4px 35px rgba(106, 240, 233, 0.4); */
+  /* margin-bottom: 70px; */
 }

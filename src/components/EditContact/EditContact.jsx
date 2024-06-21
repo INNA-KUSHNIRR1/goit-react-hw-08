@@ -105,6 +105,7 @@ const EditContactForm = ({ setIsEdit, contact }) => {
             </label>
 
             <Field
+              className={style.field}
               type="tel"
               name="number"
               id={numberFieldId}

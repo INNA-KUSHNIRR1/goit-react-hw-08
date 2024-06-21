@@ -1,0 +1,110 @@
+.sectionForm {
+  padding: 0 16px;
+}
+
+.form {
+  position: relative;
+  margin: 20px auto;
+
+  max-width: 380px;
+  padding: 12px;
+  border: 1px solid rgb(201, 98, 98);
+  border-radius: 8px;
+  text-align: left;
+}
+.label {
+  margin-left: 16px;
+  color: rgb(201, 98, 98);
+}
+
+.field:focus {
+  border: 1px solid rgb(201, 98, 98);
+}
+.btn {
+  display: flex;
+  box-shadow: 0px 2px 2px rgb(201, 98, 98);
+  color: rgb(201, 98, 98);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
+  text-align: center;
+  border: 2px solid #1b1a1a;
+  margin-top: 20px;
+  padding: 10px;
+  transition: all ease-in-out;
+}
+.btn:hover {
+  border: 2px solid rgb(201, 98, 98);
+}
+
+.btn:focus {
+  border: 1px solid rgb(201, 98, 98);
+}
+
+.error {
+  color: rgb(201, 19, 19);
+  font-size: 14px;
+  text-align: right;
+}
+.field {
+  background-color: #181818 !important;
+  color: grey !important;
+}
+.field:-webkit-autofill {
+  background-color: #181818 !important;
+  color: grey !important;
+}
+
+.field:-webkit-autofill:focus {
+  background-color: #181818 !important;
+  color: grey !important;
+}
+
+.field:-webkit-autofill:hover {
+  background-color: #181818 !important;
+  color: grey !important;
+}
+
+.field:-webkit-autofill:active {
+  background-color: #181818 !important;
+  color: grey !important;
+}
+
+input {
+  background-color: #181818;
+  color-scheme: light dark;
+  border: none;
+  outline: none;
+  padding: 12px;
+  width: 100%;
+  height: 40px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 16px;
+  color: gray;
+  border: 1px solid transparent;
+  transition: border 250ms ease-in-out;
+}
+input:hover,
+input:focus {
+  border: 1px solid rgb(201, 98, 98);
+}
+.btnUp {
+  position: absolute;
+  bottom: 3px;
+  right: 2px;
+  background-color: inherit;
+  padding: 4px 10px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.btnUp .iconUp {
+  transition: transform 250ms ease-in-out;
+}
+.btnUp:hover .iconUp,
+.btnUp:focus .iconUp {
+  transform: scale(1.1);
+}
+.iconUp {
+  fill: grey;
+}

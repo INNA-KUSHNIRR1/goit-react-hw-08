@@ -1,0 +1,103 @@
+.card {
+  font-size: 18px;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid rgba(140, 196, 186, 0.87);
+  border-radius: 16px;
+  padding: 12px;
+  transition: all 250ms ease-in-out;
+}
+.card:hover {
+  box-shadow: 0px 0px 4px rgba(140, 196, 186, 0.87);
+}
+.user {
+  max-width: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  text-align: left;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  white-space: nowrap;
+}
+.nameUser {
+  font-size: 18px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.boxBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.btn {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  width: 35px;
+  height: 35px;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: all 250ms ease-in-out;
+}
+.btn:hover,
+.btn:focus {
+  box-shadow: 2px 2px 4px rgba(140, 196, 186, 0.87);
+  border: 1px solid rgba(140, 196, 186, 0.87);
+}
+
+.iconPhone {
+  transition: transform 250ms ease-in-out;
+  fill: rgb(243, 245, 244);
+}
+.iconPhone:hover {
+  transform: scale(1.1);
+}
+
+.linkPhone {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  outline: none;
+}
+.spanIcon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(69, 131, 110);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 250ms ease-in-out;
+  background-color: rgb(43 162 122);
+}
+.linkPhone .spanIcon {
+  transition: all 250ms ease-in-out;
+}
+.linkPhone:hover .spanIcon {
+  background-color: rgb(15, 61, 46);
+  border: 1px solid rgb(29, 37, 35);
+}
+.linkPhone:focus .spanIcon {
+  background-color: rgb(15, 61, 46);
+  border: 1px solid rgb(29, 37, 35);
+}
+.spanIconUser {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 250ms ease-in-out;
+}
+.text {
+  color: rgba(185, 236, 227, 0.87);
+}

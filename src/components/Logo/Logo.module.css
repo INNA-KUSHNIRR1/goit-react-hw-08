@@ -1,0 +1,17 @@
+.icon {
+  fill: rgb(201, 98, 98);
+}
+
+.title {
+  margin-top: 10px;
+  color: rgb(201, 98, 98);
+}
+
+.divWrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.header {
+  box-shadow: 2px 4px 35px rgb(201, 98, 98);
+  margin-bottom: 70px;
+}

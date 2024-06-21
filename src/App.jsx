@@ -24,7 +24,7 @@ function App() {
       <SearchBox />
       {loading && <Loader />}
       {error && <Error />}
-      {contacts.length > 0 && <ContactList />}
+      {contacts.length > 0 && !error && <ContactList />}
     </>
   );
 }

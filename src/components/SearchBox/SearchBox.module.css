@@ -28,6 +28,7 @@ span {
 }
 .input {
   font-style: italic;
+
   background-color: #181818;
   color-scheme: light dark;
   border: none;
@@ -38,13 +39,13 @@ span {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   font-size: 14px;
-  color: gray;
+  color: rgb(172, 177, 177);
   border: 1px solid transparent;
   transition: border 250ms ease-in-out;
 }
 .input:hover,
 .input:focus {
-  background-color: #222121;
+  background-color: #3a3939;
   box-shadow: inset 2px 2px 4px rgb(10, 10, 10);
 }
 
@@ -69,10 +70,13 @@ span {
   min-width: 40px;
   height: 40px;
   transition: all 250ms ease-in-out;
+  border: none;
 }
 
 .btnAdd:focus {
-  border: 1px solid rgb(172, 177, 177);
+  box-shadow: inset 2px 2px 4px rgb(10, 10, 10);
+  background: rgba(26, 31, 30, 0.2)
+    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgba(106, 240, 233, 0.4));
 }
 .icon {
   stroke: rgb(172, 177, 177);

@@ -45,7 +45,7 @@ export const editContact = createAsyncThunk(
     try {
       const response = await axios.put(
         `/contacts/${updateContact.contactId}`,
-        updateContact,
+        updateContact.updateContact,
       );
       return response.data;
     } catch (error) {

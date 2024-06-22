@@ -37,6 +37,7 @@
   gap: 5px;
 }
 .btn {
+  border: none;
   background-color: inherit;
   display: flex;
   justify-content: center;
@@ -50,7 +51,9 @@
 }
 
 .btn:focus {
-  border: 1px solid rgb(172, 177, 177);
+  box-shadow: inset 2px 2px 4px rgb(10, 10, 10);
+  background: rgba(26, 31, 30, 0.2)
+    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgba(106, 240, 233, 0.4));
 }
 .btn .iconDelete {
   transition: all 250ms ease-in-out;

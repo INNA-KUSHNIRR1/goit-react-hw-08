@@ -1,22 +1,35 @@
 import style from './Contact.module.css';
 import { ImPhone } from 'react-icons/im';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { RiEdit2Fill } from 'react-icons/ri';
 import { deleteContact } from '../../redux/contactsOps';
 import { useState } from 'react';
 import EditContactForm from '../EditContact/EditContact';
 import { FaRegUser } from 'react-icons/fa6';
+import { changeFilter } from '../../redux/filtersSlice';
+import { selectFilter } from '../../redux/selectors';
 
 const Contact = ({ contact }) => {
+  const value = useSelector(selectFilter);
   const [isEdit, setIsEdit] = useState(false);
   const dispatch = useDispatch();
   const onDelete = () => {
     dispatch(deleteContact(contact.id));
+    if (value !== '') {
+      dispatch(changeFilter(''));
+    }
   };
   const onEdit = () => {
-    console.log('edit');
     setIsEdit(true);
+    if (value !== '') {
+      dispatch(changeFilter(''));
+    }
+  };
+  const handleClearSearch = () => {
+    if (value !== '') {
+      dispatch(changeFilter(''));
+    }
   };
   return (
     <>
@@ -28,7 +41,11 @@ const Contact = ({ contact }) => {
             </span>
             <span className={style.text}>{contact.name}</span>
           </h2>
-          <a href={`tel: +${contact.number}`} className={style.linkPhone}>
+          <a
+            href={`tel: +${contact.number}`}
+            className={style.linkPhone}
+            onClick={handleClearSearch}
+          >
             <span className={style.spanIcon}>
               <ImPhone className={style.iconPhone} size={16} />
             </span>

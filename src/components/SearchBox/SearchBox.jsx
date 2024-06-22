@@ -12,7 +12,11 @@ const SearchBox = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
   const toggleFormVisibility = () => {
     setIsFormVisible(false);
+    if (value !== '') {
+      dispatch(changeFilter(''));
+    }
   };
+
   return (
     <>
       <section className={style.sectionSearch}>

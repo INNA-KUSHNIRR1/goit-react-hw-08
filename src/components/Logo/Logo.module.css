@@ -5,14 +5,10 @@
 .title {
   margin-top: 10px;
   margin-bottom: 40px;
-  color: rgba(106, 240, 233, 0.4);
+  color: rgba(106, 240, 233, 0.5);
 }
 
 .divWrapper {
   width: 100%;
   overflow: hidden;
-}
-.header {
-  /* box-shadow: 2px 4px 35px rgba(106, 240, 233, 0.4); */
-  /* margin-bottom: 70px; */
 }

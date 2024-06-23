@@ -3,15 +3,15 @@
 }
 
 .form {
-  background: rgba(26, 31, 30, 0.2)
-    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgba(106, 240, 233, 0.4));
+  background: rgba(26, 31, 30)
+    linear-gradient(360deg, rgba(48, 52, 90, 0.5), rgba(65, 255, 245, 0.4));
   position: relative;
   margin: 20px auto;
   max-width: 380px;
   padding: 12px;
   border-radius: 16px;
   text-align: left;
-  box-shadow: -0px 0px 4px rgba(22, 22, 22, 0.87);
+  box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.87);
 }
 .label {
   margin-left: 16px;
@@ -63,7 +63,7 @@
 }
 .field:hover,
 .field:focus {
-  background-color: #3a3939;
+  background-color: #3b4f58;
   box-shadow: inset 2px 2px 4px rgb(10, 10, 10);
 }
 .btnUp {

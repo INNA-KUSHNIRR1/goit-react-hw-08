@@ -23,13 +23,17 @@ function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <>
-      <Logo />
-      <SearchBox />
-      {loading && <Loader />}
-      {error && <Error />}
-      {contacts.length > 0 && !error && <ContactList />}
-    </>
+    <div className="app">
+      <div className="container">
+        <div className="content">
+          <Logo />
+          <SearchBox />
+          {loading && <Loader />}
+          {error && <Error />}
+          {contacts.length > 0 && !error && <ContactList />}
+        </div>
+      </div>
+    </div>
   );
 }
 

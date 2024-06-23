@@ -1,6 +1,6 @@
 .card {
-  background: rgba(26, 31, 30, 0.2)
-    linear-gradient(360deg, rgba(18, 19, 19, 0.5), rgba(106, 240, 233, 0.4));
+  background: rgba(26, 31, 30)
+    linear-gradient(360deg, rgba(48, 52, 90, 0.5), rgba(61, 219, 211, 0.4));
   font-size: 18px;
   display: flex;
   gap: 16px;
@@ -9,6 +9,7 @@
   width: 100%;
   border-radius: 16px;
   padding: 12px;
+  box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.87);
   transition: all 250ms ease-in-out;
 }
 .card:hover {

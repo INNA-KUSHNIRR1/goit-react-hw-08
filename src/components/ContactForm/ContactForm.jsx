@@ -2,11 +2,12 @@ import style from './ContactForm.module.css';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
 import { Field, Form, Formik } from 'formik';
-import { useId } from 'react';
+// import { useId } from 'react';
 import { ErrorMessage } from 'formik';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BsBoxArrowUpLeft } from 'react-icons/bs';
 import { addContact } from '../../redux/contactsOps';
+import { selectContacts } from '../../redux/contactsSlice';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -47,18 +48,27 @@ const TextMaskCustom = ({ field, ...props }) => (
   />
 );
 const ContactForm = ({ setIsFormVisible }) => {
-  const nameFieldId = useId();
-  const numberFieldId = useId();
   const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
   const handleSubmit = (values, actions) => {
-    const newContact = {
-      name: values.name,
-      number: values.number,
-    };
+    const duplicateContact = contacts.find(
+      contact =>
+        contact.name.toLowerCase() === values.name.toLowerCase() ||
+        contact.number === values.number,
+    );
+
+    if (duplicateContact) {
+      actions.setErrors({ name: 'This contact already exists' });
+    } else {
+      const newContact = {
+        name: values.name,
+        number: values.number,
+      };
       dispatch(addContact(newContact));
-    setIsFormVisible(true);
-    actions.resetForm();
+      setIsFormVisible(true);
+      actions.resetForm();
+    }
   };
   const handleCloseForm = actions => {
     setIsFormVisible(true);
@@ -81,29 +91,25 @@ const ContactForm = ({ setIsFormVisible }) => {
       >
         {resetForm => (
           <Form className={style.form}>
-            <label className={style.label} htmlFor={nameFieldId}>
-              Name
-            </label>
+            <label className={style.label}>Name</label>
             <Field
               className={style.field}
               type="text"
               name="name"
-              id={nameFieldId}
+              // id={nameFieldId}
             />
             <ErrorMessage
               className={style.error}
               name="name"
               component="span"
             />
-            <label className={style.label} htmlFor={numberFieldId}>
-              Number
-            </label>
+            <label className={style.label}>Number</label>
 
             <Field
               className={style.field}
               type="tel"
               name="number"
-              id={numberFieldId}
+              // id={numberFieldId}
               component={TextMaskCustom}
               onClick={handleClick}
             />

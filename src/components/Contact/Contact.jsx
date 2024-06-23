@@ -1,14 +1,12 @@
 import style from './Contact.module.css';
 import { ImPhone } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux';
-import { RiDeleteBin6Fill } from 'react-icons/ri';
-import { RiEdit2Fill } from 'react-icons/ri';
+import { RiDeleteBin6Fill, RiEdit2Fill } from 'react-icons/ri';
 import { deleteContact } from '../../redux/contactsOps';
 import { useState } from 'react';
 import EditContactForm from '../EditContact/EditContact';
 import { FaRegUser } from 'react-icons/fa6';
-import { changeFilter } from '../../redux/filtersSlice';
-import { selectFilter } from '../../redux/selectors';
+import { changeFilter, selectFilter } from '../../redux/filtersSlice';
 
 const Contact = ({ contact }) => {
   const value = useSelector(selectFilter);

@@ -1,13 +1,12 @@
 import style from './ContactForm.module.css';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
-import { Field, Form, Formik } from 'formik';
-// import { useId } from 'react';
-import { ErrorMessage } from 'formik';
+import { Field, Form, Formik, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsBoxArrowUpLeft } from 'react-icons/bs';
-import { addContact } from '../../redux/contactsOps';
-import { selectContacts } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/contacts/operations';
+import { selectContacts } from '../../redux/contacts/selectors';
+import { useId } from 'react';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -48,6 +47,8 @@ const TextMaskCustom = ({ field, ...props }) => (
   />
 );
 const ContactForm = ({ setIsFormVisible }) => {
+  const nameFieldId = useId();
+  const numberFieldId = useId();
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
@@ -91,25 +92,30 @@ const ContactForm = ({ setIsFormVisible }) => {
       >
         {resetForm => (
           <Form className={style.form}>
-            <label className={style.label}>Name</label>
+            <label className={style.label} htmlFor={nameFieldId}>
+              Name
+            </label>
             <Field
               className={style.field}
               type="text"
               name="name"
-              // id={nameFieldId}
+              id={nameFieldId}
+              autoComplete="name"
             />
             <ErrorMessage
               className={style.error}
               name="name"
               component="span"
             />
-            <label className={style.label}>Number</label>
+            <label className={style.label} htmlFor={numberFieldId}>
+              Number
+            </label>
 
             <Field
               className={style.field}
               type="tel"
               name="number"
-              // id={numberFieldId}
+              id={numberFieldId}
               component={TextMaskCustom}
               onClick={handleClick}
             />

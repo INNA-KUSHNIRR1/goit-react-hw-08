@@ -42,11 +42,11 @@ span {
   color: rgb(172, 177, 177);
   border: 1px solid transparent;
   transition: border 250ms ease-in-out;
+  box-shadow: inset 2px 2px 4px rgb(10, 10, 10);
 }
 .input:hover,
 .input:focus {
   background-color: #3b4f58;
-  box-shadow: inset 2px 2px 4px rgb(10, 10, 10);
 }
 
 .formContainer {

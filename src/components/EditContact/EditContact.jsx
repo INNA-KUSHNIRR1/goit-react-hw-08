@@ -5,7 +5,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { BsBoxArrowUpLeft } from 'react-icons/bs';
 import { useId } from 'react';
-import { editContact } from '../../redux/contactsOps';
+import { editContact } from '../../redux/contacts/operations';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()

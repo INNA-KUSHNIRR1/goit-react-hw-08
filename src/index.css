@@ -19,10 +19,11 @@ body {
       rgba(46, 47, 66, 0.9)
     ),
     url('./img/1678920504_bogatyr-club-p-fon-simvoli-foni-vkontakte-10.jpg');
-  background-size: 1440px;
+  background-size: cover;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
+
   min-width: 320px;
   min-height: 100vh;
   margin: 0;

@@ -55,7 +55,7 @@ const EditContactForm = ({ setIsEdit, contact }) => {
       name: values.name,
       number: values.number,
     };
-    console.log(updateContact);
+
     dispatch(editContact({ contactId: contact.id, updateContact }))
       .unwrap()
       .then(() => {

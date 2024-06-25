@@ -11,7 +11,7 @@ import Error from '../../components/Error/Error';
 import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/contacts/operations';
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
 
@@ -31,3 +31,5 @@ export const ContactsPage = () => {
     </div>
   );
 };
+
+export default ContactsPage;

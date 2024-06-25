@@ -1,16 +1,19 @@
 import style from './HomePage.module.css';
+import Logo from '../../components/Logo/Logo';
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
-      <div style={style.container}>
-        <h1 style={style.title}>
+      <div className={style.container}>
+        <Logo />
+        {/* <h1 className={style.title}>
           Contact manager welcome page
           <span role="img" aria-label="Greeting icon">
             💁‍♀️
           </span>
-        </h1>
+        </h1> */}
       </div>
     </>
   );
 };
+export default HomePage;

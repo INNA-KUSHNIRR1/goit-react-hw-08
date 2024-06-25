@@ -33,6 +33,7 @@ export const RegistrationForm = () => {
   // const user = useSelector(selectUser);
 
   const handleSubmit = (values, actions) => {
+    console.log(values);
     dispatch(register(values));
     // setIsFormVisible(true);
     actions.resetForm();

@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn {
+  background-color: inherit;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 8px 12px;
+}

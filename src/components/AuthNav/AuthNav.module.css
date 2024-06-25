@@ -1,0 +1,8 @@
+.authNav {
+  display: flex;
+
+  gap: 20px;
+  justify-content: right;
+  font-size: 22px;
+  font-weight: 500;
+}

@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 // import { selectUser } from '../../redux/auth/selectors';
 import { register } from '../../redux/auth/operations';
+import { Link } from 'react-router-dom';
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
@@ -87,6 +88,12 @@ export const RegistrationForm = () => {
           <button className={style.btn} type="submit">
             Sign Up
           </button>
+          <p className={style.link}>
+            Already a member?
+            <Link className={style.logIn} to="/login">
+              Log In
+            </Link>
+          </p>
         </Form>
       </Formik>
     </section>

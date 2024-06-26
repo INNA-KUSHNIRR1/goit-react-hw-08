@@ -10,7 +10,8 @@ import {
 import Error from '../../components/Error/Error';
 import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/contacts/operations';
-
+import { Welcome } from '../../components/Welcome/Welcome';
+import style from './ContactsPage.module.css';
 const ContactsPage = () => {
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
@@ -23,9 +24,10 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <SearchBox />
+    <div className={style.contactsPage}>
       {loading && <Loader />}
+      {(contacts.length === 0 && !error && <Welcome />) ||
+        (contacts.length > 0 && !error && <SearchBox />)}
       {error && <Error />}
       {contacts.length > 0 && !error && <ContactList />}
     </div>

@@ -7,6 +7,8 @@ import { BsBoxArrowUpLeft } from 'react-icons/bs';
 import { addContact } from '../../redux/contacts/operations';
 import { selectContacts } from '../../redux/contacts/selectors';
 import { useId } from 'react';
+import { changeFilter } from '../../redux/filters/slice';
+import { selectFilter } from '../../redux/filters/selectors';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -49,6 +51,7 @@ const TextMaskCustom = ({ field, ...props }) => (
 const ContactForm = ({ setIsFormVisible }) => {
   const nameFieldId = useId();
   const numberFieldId = useId();
+  const value = useSelector(selectFilter);
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
@@ -69,6 +72,9 @@ const ContactForm = ({ setIsFormVisible }) => {
       dispatch(addContact(newContact));
       setIsFormVisible(true);
       actions.resetForm();
+    }
+    if (value !== '') {
+      dispatch(changeFilter(''));
     }
   };
   const handleCloseForm = actions => {

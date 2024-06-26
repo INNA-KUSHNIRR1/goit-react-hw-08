@@ -4,10 +4,17 @@
   padding: 12px;
   font-weight: 700;
   color: #cfd9dd;
+  transition: all 250ms ease-in-out;
 }
-
+.icon {
+  transition: all 250ms ease-in-out;
+}
+.link:hover .icon {
+  transform: scale(1.1);
+  fill: rgb(240, 241, 243);
+}
 .link.active {
-  color: #e84a5f;
+  color: #e9b528;
 }
 
 .nav {

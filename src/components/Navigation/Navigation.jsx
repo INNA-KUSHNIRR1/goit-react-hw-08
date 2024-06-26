@@ -11,11 +11,11 @@ export const Navigation = () => {
   return (
     <nav className={style.nav}>
       <NavLink className={style.link} to="/">
-        <BiHomeAlt2 size={24} />
+        <BiHomeAlt2 className={style.icon} size={26} />
       </NavLink>
       {isLoggedIn && (
         <NavLink className={style.link} to="/contacts">
-          <RiContactsBook3Fill size={24} />
+          <RiContactsBook3Fill className={style.icon} size={26} />
         </NavLink>
       )}
     </nav>

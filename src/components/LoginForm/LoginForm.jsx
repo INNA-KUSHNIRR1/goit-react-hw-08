@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 // import { selectUser } from '../../redux/auth/selectors';
 import { login } from '../../redux/auth/operations';
+import { Link } from 'react-router-dom';
 // import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 const UserSchema = Yup.object().shape({
@@ -28,7 +29,6 @@ export const LoginForm = () => {
   //   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const handleSubmit = (values, actions) => {
-   
     dispatch(login(values));
     // setIsFormVisible(true);
     actions.resetForm();
@@ -69,8 +69,14 @@ export const LoginForm = () => {
             component="span"
           />
           <button className={style.btn} type="submit">
-            LOG IN
+            Log In
           </button>
+          <p className={style.link}>
+            Already a member?
+            <Link className={style.signUp} to="/register">
+              Register
+            </Link>
+          </p>
         </Form>
       </Formik>
     </section>

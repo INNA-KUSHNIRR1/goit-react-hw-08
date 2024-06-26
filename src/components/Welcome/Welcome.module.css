@@ -1,0 +1,32 @@
+.welcome {
+  /* margin-top: 180px; */
+  font-weight: 500;
+  font-size: 28px;
+  text-align: center;
+  color: rgba(201, 209, 209, 0.8);
+  text-shadow: 2px 2px 2px rgb(24, 21, 51);
+}
+.btn {
+  margin-top: 20px;
+  background-color: inherit;
+}
+.icon {
+  transition: all 250ms ease-in-out;
+}
+.btn:hover .icon {
+  transform: scale(1.1);
+  stroke: rgb(240, 241, 243);
+}
+
+.formContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.formContainer.visible {
+  max-height: 300px;
+  opacity: 1;
+  transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+}

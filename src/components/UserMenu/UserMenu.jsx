@@ -9,13 +9,13 @@ export const UserMenu = () => {
 
   return (
     <div className={style.wrapper}>
-      <p className={style.username}>Welcome, {user.name}</p>
+      <p className={style.username}>Welcome, {user.name}!</p>
       <button
         className={style.btn}
         type="button"
         onClick={() => dispatch(logout())}
       >
-        <MdLogout size={24} />
+        <MdLogout className={style.icon} size={26} />
       </button>
     </div>
   );

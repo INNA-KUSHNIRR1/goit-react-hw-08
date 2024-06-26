@@ -85,7 +85,7 @@ export const RegistrationForm = () => {
             component="span"
           />
           <button className={style.btn} type="submit">
-            LOG IN
+            Sign Up
           </button>
         </Form>
       </Formik>

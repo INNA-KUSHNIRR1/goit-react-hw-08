@@ -52,12 +52,13 @@
   padding: 10px;
   width: 80%;
   border-radius: 16px;
+  transition: all 250ms ease-in-out;
 }
 .btn:hover,
 .btn:focus {
   box-shadow: none;
   position: relative;
-  top: 4px;
+  top: 3px;
 }
 
 .error {
@@ -78,7 +79,7 @@
   font-size: 20px;
   color: rgb(172, 177, 177);
   border: 1px solid transparent;
-  transition: border 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
   box-shadow: inset 2px 2px 4px rgb(10, 10, 10);
 }
 .field:hover,

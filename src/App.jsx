@@ -7,7 +7,7 @@ import { refreshUser } from './redux/auth/operations';
 import { selectIsRefreshing } from './redux/auth/selectors';
 import { RestrictedRoute } from './components/RestrictedRoute';
 import { PrivateRoute } from './components/PrivateRoute';
-
+import { Toaster } from 'react-hot-toast';
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() =>
   import('./pages/RegistrationPage/RegistrationPage'),
@@ -50,6 +50,23 @@ function App() {
           }
         />
       </Routes>
+      <Toaster
+        toastOptions={{
+          success: {
+            style: {
+              background: 'rgb(239 240 246)',
+              color: 'rgb(30 34 50)',
+              border: '1px solid rgb(31 31 33)',
+              padding: '10px',
+            },
+          },
+          error: {
+            style: {
+              background: 'red',
+            },
+          },
+        }}
+      />
     </Layout>
   );
 }

@@ -10,6 +10,7 @@ import { useId } from 'react';
 import { changeFilter } from '../../redux/filters/slice';
 import { selectFilter } from '../../redux/filters/selectors';
 
+// const notify = () => toast('Here is your toast.');
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
     .trim()
@@ -76,6 +77,7 @@ const ContactForm = ({ setIsFormVisible }) => {
     if (value !== '') {
       dispatch(changeFilter(''));
     }
+    
   };
   const handleCloseForm = actions => {
     setIsFormVisible(true);
@@ -133,6 +135,7 @@ const ContactForm = ({ setIsFormVisible }) => {
             <button className={style.btn} type="submit">
               Add contact
             </button>
+            
             <button
               className={style.btnUp}
               type="button"

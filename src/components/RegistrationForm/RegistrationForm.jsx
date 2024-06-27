@@ -3,7 +3,6 @@ import style from './RegistrationForm.module.css';
 import { useId } from 'react';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-// import { selectUser } from '../../redux/auth/selectors';
 import { register } from '../../redux/auth/operations';
 import { Link } from 'react-router-dom';
 
@@ -31,16 +30,13 @@ export const RegistrationForm = () => {
   const emailFieldId = useId();
   const passwordFieldId = useId();
   const dispatch = useDispatch();
-  // const user = useSelector(selectUser);
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
     dispatch(register(values));
-    // setIsFormVisible(true);
     actions.resetForm();
   };
   return (
-    <section className={style.sectionForm}>
+    <>
       <Formik
         initialValues={{ name: '', email: '', password: '' }}
         onSubmit={handleSubmit}
@@ -96,6 +92,7 @@ export const RegistrationForm = () => {
           </p>
         </Form>
       </Formik>
-    </section>
+      
+    </>
   );
 };

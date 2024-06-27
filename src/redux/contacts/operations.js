@@ -29,21 +29,9 @@ export const addContact = createAsyncThunk(
       return response.data;
     } catch (error) {
       toast.error('Failed to create contact: ' + error.message, {
-        duration: 4000,
+        duration: 5000,
         position: 'top-center',
-
-        // Styling
-        style: {},
-        className: '',
-
-        // Custom Icon
         icon: '❌',
-
-        // Change colors of success/error/loading icon
-        iconTheme: {
-          primary: '#000',
-          secondary: '#fff',
-        },
       });
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -58,38 +46,14 @@ export const deleteContact = createAsyncThunk(
       toast.success('Contact deleted!', {
         duration: 4000,
         position: 'top-center',
-
-        // Styling
-        style: {},
-        className: '',
-
-        // Custom Icon
         icon: '✔️',
-
-        // Change colors of success/error/loading icon
-        iconTheme: {
-          primary: '#000',
-          secondary: '#fff',
-        },
       });
       return response.data;
     } catch (error) {
       toast.error('Failed to delete contact: ' + error.message, {
-        duration: 4000,
+        duration: 5000,
         position: 'top-center',
-
-        // Styling
-        style: {},
-        className: '',
-
-        // Custom Icon
         icon: '❌',
-
-        // Change colors of success/error/loading icon
-        iconTheme: {
-          primary: '#000',
-          secondary: '#fff',
-        },
       });
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -107,38 +71,14 @@ export const editContact = createAsyncThunk(
       toast.success('Contact updated successfully!', {
         duration: 4000,
         position: 'top-center',
-
-        // Styling
-        style: {},
-        className: '',
-
-        // Custom Icon
         icon: '✔️',
-
-        // Change colors of success/error/loading icon
-        iconTheme: {
-          primary: '#000',
-          secondary: '#fff',
-        },
       });
       return response.data;
     } catch (error) {
       toast.error('Failed to update contact: ' + error.message, {
-        duration: 4000,
+        duration: 5000,
         position: 'top-center',
-
-        // Styling
-        style: {},
-        className: '',
-
-        // Custom Icon
         icon: '❌',
-
-        // Change colors of success/error/loading icon
-        iconTheme: {
-          primary: '#000',
-          secondary: '#fff',
-        },
       });
       return thunkAPI.rejectWithValue(error.message);
     }

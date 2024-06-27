@@ -2,7 +2,7 @@ import style from './HomePage.module.css';
 import Logo from '../../components/Logo/Logo';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { selectIsLoggedIn } from '../../redux/auth/slice';
 
 const HomePage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

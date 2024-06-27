@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import style from './AppBar.module.css';
-import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { selectIsLoggedIn } from '../../redux/auth/slice';
 import { Navigation } from '../Navigation/Navigation';
 
 import { AuthNav } from '../AuthNav/AuthNav';

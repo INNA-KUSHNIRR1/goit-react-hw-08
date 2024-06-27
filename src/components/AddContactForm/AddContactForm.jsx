@@ -1,4 +1,4 @@
-import style from './ContactForm.module.css';
+import style from './AddContactForm.module.css';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
 import { Field, Form, Formik, ErrorMessage } from 'formik';
@@ -47,7 +47,7 @@ const TextMaskCustom = ({ field, ...props }) => (
     className={style.field}
   />
 );
-const ContactForm = ({ setIsFormVisible }) => {
+const AddContactForm = ({ setIsFormVisible }) => {
   const nameFieldId = useId();
   const numberFieldId = useId();
   const value = useSelector(selectFilter);
@@ -146,4 +146,4 @@ const ContactForm = ({ setIsFormVisible }) => {
     </>
   );
 };
-export default ContactForm;
+export default AddContactForm;

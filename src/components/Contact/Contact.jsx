@@ -6,8 +6,7 @@ import { deleteContact } from '../../redux/contacts/operations';
 import { useState } from 'react';
 import EditContactForm from '../EditContact/EditContact';
 import { FaRegUser } from 'react-icons/fa6';
-import { changeFilter } from '../../redux/filters/slice';
-import { selectFilter } from '../../redux/filters/selectors';
+import { changeFilter, selectFilter } from '../../redux/filters/slice';
 
 const Contact = ({ contact }) => {
   const value = useSelector(selectFilter);

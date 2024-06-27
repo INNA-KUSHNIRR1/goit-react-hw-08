@@ -1,38 +1,37 @@
 import { IoPersonAddOutline } from 'react-icons/io5';
 import style from './Welcome.module.css';
 import { useState } from 'react';
-import ContactForm from '../ContactForm/ContactForm';
+import AddContactForm from '../AddContactForm/AddContactForm';
 
 export const Welcome = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
+
   const toggleFormVisibility = () => {
     setIsFormVisible(false);
   };
   return (
     <div>
-      {isFormVisible && (
-        <div className={style.welcome}>
-          Registration Successful!
-          <br />
-          🎉🎉🎉
-          <br />
-          <br />
-          Welcome to your personal Phonebook.
-          <br />
-          Start by adding your first contact now!
-          <br />
+      <div className={style.welcome}>
+        Welcome
+        <br />
+        to your personal Phonebook.
+        <br />
+        Start by adding your
+        <br />
+        first contact now!
+        <br />
+        {isFormVisible && (
           <button className={style.btn} onClick={toggleFormVisibility}>
             <IoPersonAddOutline className={style.icon} size={26} />
           </button>
-        </div>
-      )}
-
+        )}
+      </div>
       <div
         className={`${style.formContainer} ${
           !isFormVisible ? style.visible : ''
         }`}
       >
-        <ContactForm setIsFormVisible={setIsFormVisible} />
+        <AddContactForm setIsFormVisible={setIsFormVisible} />
       </div>
     </div>
   );

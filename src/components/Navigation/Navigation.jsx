@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { selectIsLoggedIn } from '../../redux/auth/slice';
 import style from './Navigation.module.css';
 import { NavLink } from 'react-router-dom';
 import { BiHomeAlt2 } from 'react-icons/bi';

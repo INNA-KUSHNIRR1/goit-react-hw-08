@@ -34,7 +34,7 @@ export const LoginForm = () => {
     actions.resetForm();
   };
   return (
-    <section className={style.sectionForm}>
+    <>
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={handleSubmit}
@@ -79,6 +79,6 @@ export const LoginForm = () => {
           </p>
         </Form>
       </Formik>
-    </section>
+    </>
   );
 };

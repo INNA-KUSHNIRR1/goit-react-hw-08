@@ -27,6 +27,7 @@ const ContactsPage = () => {
     <div >
       {loading && <Loader />}
       {contacts.length > 0 ? <SearchBox /> : <Welcome />}
+      
       {error && <Error />}
     </div>
   );

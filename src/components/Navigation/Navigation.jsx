@@ -3,7 +3,7 @@ import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import style from './Navigation.module.css';
 import { NavLink } from 'react-router-dom';
 import { BiHomeAlt2 } from 'react-icons/bi';
-import { RiContactsBook3Fill } from 'react-icons/ri';
+import { MdOutlineContacts } from 'react-icons/md';
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -15,7 +15,7 @@ export const Navigation = () => {
       </NavLink>
       {isLoggedIn && (
         <NavLink className={style.link} to="/contacts">
-          <RiContactsBook3Fill className={style.icon} size={26} />
+          <MdOutlineContacts className={style.icon} size={26} />
         </NavLink>
       )}
     </nav>

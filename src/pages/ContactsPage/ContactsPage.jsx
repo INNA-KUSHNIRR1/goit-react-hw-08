@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import ContactList from '../../components/ContactList/ContactList';
+// import ContactList from '../../components/ContactList/ContactList';
 import Loader from '../../components/Loader/Loader';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import {
@@ -26,10 +26,10 @@ const ContactsPage = () => {
   return (
     <div className={style.contactsPage}>
       {loading && <Loader />}
-      {(contacts.length === 0 && !error && <Welcome />) ||
+      {(contacts.length < 0 && !error && <Welcome />) ||
         (contacts.length > 0 && !error && <SearchBox />)}
       {error && <Error />}
-      {contacts.length > 0 && !error && <ContactList />}
+      {/* {contacts.length > 0 && !error && <ContactList />} */}
     </div>
   );
 };

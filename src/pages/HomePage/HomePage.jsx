@@ -1,8 +1,11 @@
 import style from './HomePage.module.css';
 import Logo from '../../components/Logo/Logo';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 const HomePage = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <>
       <div className={style.container}>
@@ -14,9 +17,17 @@ const HomePage = () => {
           <br />
           Start adding now!
         </h1>
-        <p className={style.link}>
-          <Link to="/register">Register</Link>
-        </p>
+        <div className={style.boxLink}>
+          {isLoggedIn ? (
+            <p className={style.link}>
+              <Link to="/contacts">Contacts</Link>
+            </p>
+          ) : (
+            <p className={style.link}>
+              <Link to="/register">Register</Link>
+            </p>
+          )}
+        </div>
       </div>
     </>
   );

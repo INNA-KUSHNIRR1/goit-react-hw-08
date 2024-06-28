@@ -4,7 +4,7 @@ import MaskedInput from 'react-text-mask';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { BsBoxArrowUpLeft } from 'react-icons/bs';
-import { useId } from 'react';
+import { useEffect, useId } from 'react';
 import { editContact } from '../../redux/contacts/operations';
 
 const ContactSchema = Yup.object().shape({
@@ -45,7 +45,7 @@ const TextMaskCustom = ({ field, ...props }) => (
     className={style.field}
   />
 );
-const EditContactForm = ({ setIsEdit, contact }) => {
+const EditContactForm = ({ isEdit, setIsEdit, contact }) => {
   const nameFieldId = useId();
   const numberFieldId = useId();
   const dispatch = useDispatch();
@@ -75,9 +75,15 @@ const EditContactForm = ({ setIsEdit, contact }) => {
       }, 0);
     }
   };
-
+  useEffect(() => {
+    if (isEdit) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isEdit]);
   return (
-    <section className={style.sectionForm}>
+    <section className={`${style.sectionForm} ${isEdit ? style.visible : ''}`}>
       <Formik
         initialValues={{ name: contact.name, number: contact.number }}
         onSubmit={handleSubmit}

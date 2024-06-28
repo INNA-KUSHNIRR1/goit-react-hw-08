@@ -16,6 +16,7 @@ const SearchBox = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
   const dispatch = useDispatch();
 
+
   const toggleFormVisibility = () => {
     setIsFormVisible(false);
     if (value !== '') {

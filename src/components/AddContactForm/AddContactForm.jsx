@@ -89,7 +89,7 @@ const AddContactForm = ({ setIsFormVisible }) => {
     }
   };
   return (
-    <>
+    <div >
       <Formik
         initialValues={{ name: '', number: '' }}
         onSubmit={handleSubmit}
@@ -143,7 +143,7 @@ const AddContactForm = ({ setIsFormVisible }) => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };
 export default AddContactForm;

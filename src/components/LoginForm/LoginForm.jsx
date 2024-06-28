@@ -3,10 +3,8 @@ import style from './LoginForm.module.css';
 import { useId } from 'react';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-// import { selectUser } from '../../redux/auth/selectors';
 import { login } from '../../redux/auth/operations';
 import { Link } from 'react-router-dom';
-// import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 const UserSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email address').required('Required'),
@@ -26,11 +24,9 @@ export const LoginForm = () => {
   const emailFieldId = useId();
   const passwordFieldId = useId();
   const dispatch = useDispatch();
-  //   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const handleSubmit = (values, actions) => {
     dispatch(login(values));
-    // setIsFormVisible(true);
     actions.resetForm();
   };
   return (
@@ -72,7 +68,7 @@ export const LoginForm = () => {
             Log In
           </button>
           <p className={style.link}>
-            Already a member?
+            Don't have a account?
             <Link className={style.signUp} to="/register">
               Register
             </Link>

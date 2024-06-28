@@ -9,6 +9,7 @@ import { RestrictedRoute } from './components/RestrictedRoute';
 import { PrivateRoute } from './components/PrivateRoute';
 import { Toaster } from 'react-hot-toast';
 import { Layout } from './components/Layout';
+
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() =>
   import('./pages/RegistrationPage/RegistrationPage'),

@@ -2,6 +2,7 @@ import { IoPersonAddOutline } from 'react-icons/io5';
 import style from './Welcome.module.css';
 import { useState } from 'react';
 import AddContactForm from '../AddContactForm/AddContactForm';
+import { GoCheckCircle } from 'react-icons/go';
 
 export const Welcome = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
@@ -10,8 +11,10 @@ export const Welcome = () => {
     setIsFormVisible(false);
   };
   return (
-    <div>
+    <div >
       <div className={style.welcome}>
+        <GoCheckCircle fill="rgba(106, 240, 233, 0.5)" size={32} />
+        <br />
         Welcome
         <br />
         to your personal Phonebook.

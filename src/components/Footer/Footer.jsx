@@ -15,7 +15,7 @@ export const Footer = () => {
             href="https://www.linkedin.com/in/-inna-kushnir-"
             target="_blank"
           >
-            <FaLinkedin size={22} />
+            <FaLinkedin fill="rgb(182 205 212)" size={22} />
           </a>
         </p>
       </footer>

@@ -62,7 +62,9 @@
 .btn:hover .iconDelete {
   transform: scale(1.1);
 }
-
+.iconDelete {
+  fill: rgb(172, 177, 177);
+}
 .iconPhone {
   transition: transform 250ms ease-in-out;
   fill: rgb(172, 177, 177);

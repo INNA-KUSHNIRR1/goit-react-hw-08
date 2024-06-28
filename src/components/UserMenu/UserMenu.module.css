@@ -17,6 +17,7 @@
 }
 
 .icon {
+  fill: rgb(172, 177, 177);
   transition: all 250ms ease-in-out;
 }
 .btn:hover .icon {

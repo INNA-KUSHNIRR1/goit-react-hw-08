@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(37, 37, 37, 0.75);
   z-index: 1000;
 }
 
@@ -16,14 +16,17 @@
   bottom: auto;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background: rgb(48, 88, 88);
+  background: rgb(247, 248, 247);
   padding: 20px;
   border-radius: 10px;
   z-index: 1001;
+  box-shadow: 2px 4px rgb(19, 20, 27);
 }
 
 .modalContent {
+  color: rgb(44, 43, 43);
   text-align: center;
+  /* text-shadow: 0px 1px 0px rgb(14, 14, 36); */
 }
 
 .buttons {
@@ -35,28 +38,27 @@
 .confirmButton,
 .cancelButton {
   box-shadow: 0px 2px 2px rgb(27, 28, 36);
-  text-shadow: 0px 1px 0px rgb(14, 14, 36);
+
   padding: 10px 20px;
   cursor: pointer;
+  width: 80px;
 }
 
 .confirmButton {
-  background-color: rgb(71, 230, 203);
+  background-color: green;
   color: white;
   border: none;
 }
 
 .cancelButton {
-  background-color: rgb(235, 143, 143);
+  background-color: rgb(226, 19, 19);
   color: white;
   border: none;
 }
 
 .confirmButton:hover {
-  background-color: green;
   box-shadow: none;
 }
 .cancelButton:hover {
-  background-color: rgb(179, 15, 15);
   box-shadow: none;
 }

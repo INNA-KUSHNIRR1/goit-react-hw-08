@@ -14,11 +14,10 @@
   transition: all 250ms ease-in-out;
 }
 .icon {
+  color: rgb(172, 177, 177);
   transition: all 250ms ease-in-out;
 }
 .link:hover .icon {
   transform: scale(1.1);
   fill: rgb(240, 241, 243);
 }
-
-

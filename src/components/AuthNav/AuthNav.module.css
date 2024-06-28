@@ -6,9 +6,9 @@
   font-weight: 700;
 }
 .link {
+  color: rgb(172, 177, 177);
   transition: all 250ms ease-in-out;
 }
 .link:hover {
-   color: rgb(233, 234, 240);
-  
+  color: rgb(233, 234, 240);
 }

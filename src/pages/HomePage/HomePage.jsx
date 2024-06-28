@@ -19,13 +19,13 @@ const HomePage = () => {
         </h1>
         <div className={style.boxLink}>
           {isLoggedIn ? (
-            <p className={style.link}>
-              <Link to="/contacts">Contacts</Link>
-            </p>
+            <Link className={style.link} to="/contacts">
+              Contacts
+            </Link>
           ) : (
-            <p className={style.link}>
-              <Link to="/register">Register</Link>
-            </p>
+            <Link className={style.link} to="/register">
+              Register
+            </Link>
           )}
         </div>
       </div>

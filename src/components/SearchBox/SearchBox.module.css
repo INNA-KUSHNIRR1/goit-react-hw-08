@@ -68,6 +68,7 @@ span {
   height: 40px;
   transition: all 250ms ease-in-out;
   border: none;
+  z-index: 50;
 }
 
 .btnAdd:focus {

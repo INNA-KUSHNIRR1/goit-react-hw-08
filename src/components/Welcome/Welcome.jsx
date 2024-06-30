@@ -11,13 +11,10 @@ export const Welcome = () => {
     setIsFormVisible(false);
   };
   return (
-    <div >
+    <div>
       <div className={style.welcome}>
         <GoCheckCircle fill="rgba(106, 240, 233, 0.5)" size={32} />
         <br />
-        Welcome
-        <br />
-        to your personal Phonebook.
         <br />
         Start by adding your
         <br />

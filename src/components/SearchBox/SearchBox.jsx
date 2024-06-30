@@ -15,12 +15,13 @@ const SearchBox = () => {
   const searchId = useId();
   const [isFormVisible, setIsFormVisible] = useState(true);
   const dispatch = useDispatch();
-
+  const [textValue, setValue] = useState('');
 
   const toggleFormVisibility = () => {
     setIsFormVisible(false);
-    if (value !== '') {
+    if (value.trim() !== '') {
       dispatch(changeFilter(''));
+      setValue(value);
     }
   };
 
@@ -49,13 +50,15 @@ const SearchBox = () => {
             !isFormVisible ? style.visible : ''
           }`}
         >
-          <ContactForm setIsFormVisible={setIsFormVisible} />
+          <ContactForm
+            setIsFormVisible={setIsFormVisible}
+            textValue={textValue}
+          />
         </div>
       </div>
       {contacts.length > 0 && !error && (
         <ContactList isFormVisible={isFormVisible} />
       )}
-     
     </>
   );
 };

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BsBoxArrowUpLeft } from 'react-icons/bs';
 import { addContact } from '../../redux/contacts/operations';
 import { selectContacts } from '../../redux/contacts/slice';
-import { useId } from 'react';
+import { useEffect, useId, useState } from 'react';
 import { changeFilter, selectFilter } from '../../redux/filters/slice';
 
 const ContactSchema = Yup.object().shape({
@@ -47,12 +47,40 @@ const TextMaskCustom = ({ field, ...props }) => (
     className={style.field}
   />
 );
-const ContactForm = ({ setIsFormVisible }) => {
+const ContactForm = ({ setIsFormVisible, textValue }) => {
   const nameFieldId = useId();
   const numberFieldId = useId();
   const value = useSelector(selectFilter);
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
+
+  const plainNumberPattern = /^\d{2,10}$/;
+  const formattedNumberPattern = /^\(\d{3}\) \d{3}-\d{4}$/;
+
+  const determineInitialValues = text => {
+    if (plainNumberPattern.test(text)) {
+      const plainNumber = text.replace(/\D/g, ''); // Удаление всех нецифровых символов
+      const formattedText = `(${plainNumber.slice(0, 3)}) ${plainNumber.slice(
+        3,
+        6,
+      )}-${plainNumber.slice(6)}`;
+      return { name: '', number: formattedText };
+    } else if (formattedNumberPattern.test(text)) {
+      return { name: '', number: text };
+    } else {
+      return { name: text, number: '' };
+    }
+  };
+
+  const [initialValues, setInitialValues] = useState(
+    textValue ? determineInitialValues(textValue) : { name: '', number: '' },
+  );
+
+  useEffect(() => {
+    setInitialValues(
+      textValue ? determineInitialValues(textValue) : { name: '', number: '' },
+    );
+  }, [textValue]);
 
   const handleSubmit = (values, actions) => {
     const duplicateContact = contacts.find(
@@ -77,6 +105,7 @@ const ContactForm = ({ setIsFormVisible }) => {
     }
   };
   const handleCloseForm = actions => {
+    setInitialValues({ name: '', number: '' });
     setIsFormVisible(true);
     actions.resetForm();
   };
@@ -91,7 +120,8 @@ const ContactForm = ({ setIsFormVisible }) => {
   return (
     <>
       <Formik
-        initialValues={{ name: '', number: '' }}
+        initialValues={initialValues}
+        enableReinitialize
         onSubmit={handleSubmit}
         validationSchema={ContactSchema}
       >

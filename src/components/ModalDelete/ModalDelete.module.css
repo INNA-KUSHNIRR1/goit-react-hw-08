@@ -26,12 +26,15 @@
 .modalContent {
   color: rgb(44, 43, 43);
   text-align: center;
-  /* text-shadow: 0px 1px 0px rgb(14, 14, 36); */
+  
 }
 
 .buttons {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
   margin-top: 20px;
 }
 
@@ -41,7 +44,7 @@
 
   padding: 10px 20px;
   cursor: pointer;
-  width: 80px;
+  width: 180px;
 }
 
 .confirmButton {

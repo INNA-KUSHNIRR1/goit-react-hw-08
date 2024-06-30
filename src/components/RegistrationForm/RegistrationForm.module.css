@@ -83,3 +83,7 @@
 .login:focus {
   color: rgb(172, 177, 177);
 }
+.passwordHint {
+  font-size: 13px;
+  text-align: right;
+}

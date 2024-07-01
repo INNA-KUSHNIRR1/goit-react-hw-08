@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/contacts/operations';
 import { Welcome } from '../../components/Welcome/Welcome';
 import style from './ContactsPage.module.css';
+import Loader from '../../components/Loader/Loader';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -16,10 +17,12 @@ const ContactsPage = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className={style.contactsPage}>
-      {(contacts.length > 0 && !loading && <SearchBox />) ||
-        (contacts.length === 0 && !loading && <Welcome />)}
+      {(contacts.length > 0 && <SearchBox />) ||
+        (contacts.length === 0 && <Welcome />)}
     </div>
   );
 };

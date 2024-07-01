@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import style from './RegistrationForm.module.css';
 import { useId } from 'react';
@@ -26,6 +27,7 @@ const UserSchema = Yup.object().shape({
 });
 
 export const RegistrationForm = () => {
+  const [showPasswordHint, setShowPasswordHint] = useState(false);
   const nameFieldId = useId();
   const emailFieldId = useId();
   const passwordFieldId = useId();
@@ -35,6 +37,7 @@ export const RegistrationForm = () => {
     dispatch(register(values));
     actions.resetForm();
   };
+
   return (
     <>
       <Formik
@@ -42,7 +45,7 @@ export const RegistrationForm = () => {
         onSubmit={handleSubmit}
         validationSchema={UserSchema}
       >
-        {({ errors, touched }) => (
+        {({ errors }) => (
           <Form className={style.form}>
             <label className={style.label} htmlFor={nameFieldId}>
               Name
@@ -78,19 +81,19 @@ export const RegistrationForm = () => {
             <label className={style.label} htmlFor={passwordFieldId}>
               Password
             </label>
-
             <Field
               className={style.field}
               type="password"
               name="password"
               id={passwordFieldId}
+              onFocus={() => setShowPasswordHint(true)}
             />
             <ErrorMessage
               className={style.error}
               name="password"
               component="span"
             />
-            {touched.password && !errors.password && (
+            {showPasswordHint && !errors.password && (
               <div className={style.passwordHint}>
                 Password must be at least 8 characters long and contain at least
                 one lowercase letter, one uppercase letter, one number, and one

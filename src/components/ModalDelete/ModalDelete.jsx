@@ -12,7 +12,11 @@ export const ModalDelete = ({ isOpen, onClose, onConfirm, contactName }) => {
     >
       <div className={style.modalContent}>
         <h2>Confirm Delete</h2>
-        <p>Are you sure you want to delete {contactName}?</p>
+        <p>
+          Are you sure you want to delete
+          <br />
+          {contactName}?
+        </p>
         <div className={style.buttons}>
           <button onClick={onConfirm} className={style.confirmButton}>
             Yes

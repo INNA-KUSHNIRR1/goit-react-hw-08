@@ -23,9 +23,14 @@ const HomePage = () => {
               Contacts
             </Link>
           ) : (
-            <Link className={style.link} to="/register">
-              Register
-            </Link>
+            <>
+              <Link className={style.link} to="/register">
+                Register
+              </Link>
+              <Link className={style.link} to="/login">
+                Log In
+              </Link>
+            </>
           )}
         </div>
       </div>

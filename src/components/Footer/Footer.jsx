@@ -3,8 +3,8 @@ import { FaLinkedin } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
-    <div className={style.footer}>
-      <footer>
+    <div>
+      <footer className={style.footer}>
         <p>Created by Inna Kushnir</p>
         <p>© 2024 Phonebook</p>
         <p>Built with HTML, CSS, JavaScript, React, Redux, Redux Persist</p>
